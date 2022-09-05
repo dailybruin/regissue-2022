@@ -9,6 +9,7 @@ import Landing from './components/Landing';
 import NavBar from "./components/NavBar";
 import EditorLetter from "./components/EditorLetter";
 import News_Sports from "./components/News_Sports";
+import Arts from "./components/Arts";
 
 import NewsBackground from "./images/news.svg";
 import SportsBackground from "./images/sports.svg"
@@ -34,6 +35,7 @@ const AppContent = () => {
             <EditorLetter letter = {data.letter}/>
             <News_Sports id="news" topPad={false} articles={data.news} background={NewsBackground} />
             <News_Sports id="sports" topPad={true} articles={data.sports} background={SportsBackground} />
+            <Arts id="arts" articles={data.arts} background={NewsBackground}/>
             <Footer/>
           
         </div>

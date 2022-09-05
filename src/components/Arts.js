@@ -5,9 +5,9 @@ import { mediaQueries } from "../shared/config";
 import Card from "./Card";
 import { Fragment } from "react";
 
-export default function News_Sports(props) {
+export default function Arts(props) {
   const Container = styled.div`
-    background: url(${props.background}) no-repeat center;
+    background: url(${props.background}) no-repeat center center;
     background-size: cover;
     max-width: 100vw;
   `
@@ -15,11 +15,11 @@ export default function News_Sports(props) {
   const Grid = styled.div`
     width: 95%;
     height: fit-content;
-    padding-top: ${props.topPad ? '40em' : '30em'};
+    padding-top: 40em;
     padding-bottom: 5%;
     margin: auto;
     display: grid;
-    grid-template-rows: 0.5fr 0.5fr 1fr 0.5fr 0.5fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr 0.5fr;
     grid-template-columns: repeat(6, 1fr);
     row-gap: 2em;
     column-gap: 2em;
@@ -27,9 +27,7 @@ export default function News_Sports(props) {
       "one one one two two two"
       "one one one three three three"
       "four four five five six six"
-      "seven seven seven eight eight eight"
-      "nine nine nine eight eight eight"
-      "ten ten eleven eleven twelve twelve";
+      "seven seven seven eight eight eight";
   
     ${mediaQueries.mobile} {
       display: flex;
@@ -78,26 +76,6 @@ export default function News_Sports(props) {
       grid-area: eight;
       background-color: lightgreen;
     }
-
-    .article_nine{
-      grid-area: nine;
-      background-color: lightskyblue;
-    }
-
-    .article_ten{
-      grid-area: ten;
-      background-color: olive;
-    }
-
-    .article_eleven{
-      grid-area: eleven;
-      background-color: aquamarine;
-    }
-
-    .article_twelve{
-      grid-area: twelve;
-      background-color: blueviolet;
-    }
   `;
   
   function buildGrid(data) {
@@ -125,7 +103,6 @@ export default function News_Sports(props) {
   }
   console.log(props.topPad)
   return (
-    
     <Container>
       <Grid>
         {buildGrid(props.articles)}
