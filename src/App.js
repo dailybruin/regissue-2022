@@ -15,8 +15,8 @@ import Quad from "./components/Quad";
 import Prime from "./components/Prime";
 import Multimedia from "./components/Multimedia";
 
-import NewsBackground from "./images/news.svg";
-import SportsBackground from "./images/sports.svg"
+import News from "./images/news.svg";
+import Sports from "./images/sports.svg"
 
 // TODO: fix backgrounds, set up navbar (make sure landing is rendered first, look at grad issue)
 // TODO: set up article card, do ABOUT page
@@ -44,13 +44,13 @@ const AppContent = () => {
                 <NavBar style={{ margin: "auto" }} />
                 <EditorLetter letter = {data.letter}/>
                 <div id="news" >
-                  <News_Sports topPad={false} articles={data.news} background={NewsBackground} />
+                  <News_Sports sports={false} header={News} articles={data.news} />
                 </div>
                 <div id="sports">
-                  <News_Sports id="sports" topPad={true} articles={data.sports} background={SportsBackground} />
+                  <News_Sports id="sports" sports={true} header={Sports} articles={data.sports}/>
                 </div>
                 <div id="arts">
-                  <Arts articles={data.arts} background={NewsBackground}/>
+                  <Arts articles={data.arts}/>
                 </div>
                 <div id="opinion"> 
                   <Opinion articles={data.opinion}/>

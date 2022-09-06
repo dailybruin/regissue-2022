@@ -2,20 +2,104 @@ import React from "react";
 import styled from "styled-components";
 import { mediaQueries } from "../shared/config";
 
+import NewsTop from "../images/news_top.svg";
+import SportsTop from "../images/sports_top.svg";
+import NewsB from "../images/news_bottom.svg";
+import SportsB from "../images/sports_bottom.svg";
+
 import Card from "./Card";
 import { Fragment } from "react";
 
 export default function News_Sports(props) {
   const Container = styled.div`
-    background: url(${props.background}) no-repeat center;
-    background-size: cover;
+    background-color: ${props.sports ? "#6ADC44" : "#F8D84A"};
     max-width: 100vw;
+    position: relative;
+    overflow: hidden;
+  `
+
+  const Header = styled.img`
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 3em;
+    z-index: 5;
+
+    display: inline-block;
+    max-width: 100%; 
+    vertical-align: middle; 
+    overflow: hidden; 
+  `
+
+  const NewsTopBg = styled.img`
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+
+    display: inline-block;
+    width: 100%; 
+    vertical-align: middle; 
+    overflow: hidden; 
+    ${mediaQueries.mobile} {
+      width: 200%;
+    }
+  `
+
+  const NewsBottom = styled.img`
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 1;
+
+    display: inline-block;
+    width: 100%; 
+    vertical-align: middle; 
+    overflow: hidden; 
+
+    ${mediaQueries.mobile} {
+      width: 200%;
+    }
+  `
+
+  const LSports = styled.img`
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+    display: inline-block;
+    width: 60%; 
+    vertical-align: middle; 
+    overflow: hidden; 
+  `
+
+  const SportsBottom = styled.img`
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    display: inline-block;
+    width: 60%; 
+    vertical-align: middle; 
+    overflow: hidden; 
   `
 
   const Grid = styled.div`
+    position: relative;
+    z-index: 10;
     width: 95%;
     height: fit-content;
-    padding-top: ${props.topPad ? '40em' : '30em'};
+    padding-top: ${props.sports ? '35em' : '30em'};
     padding-bottom: 5%;
     margin: auto;
     display: grid;
@@ -37,6 +121,7 @@ export default function News_Sports(props) {
       width: 100vw;
       margin: auto;
       align-items: center;
+      padding-top: 20em;
     }
 
     .article_one {
@@ -123,13 +208,51 @@ export default function News_Sports(props) {
       );
     });
   }
-  console.log(props.topPad)
+
+  function buildTopBg(sports)
+  {
+      if (sports == false)
+      {
+        return (
+          <>
+            <NewsTopBg src={NewsTop}/>
+          </>
+        );
+      }
+      else
+      {
+        return (
+          <LSports src={SportsTop}/>
+        );
+      }
+  }
+
+  function buildBottomBg(sports)
+  {
+      if (sports == false)
+      {
+        return (
+          <>
+            <NewsBottom src={NewsB}/>
+          </>
+        );
+      }
+      else
+      {
+        return (
+          <SportsBottom src={SportsB}/>
+        );
+      }
+  }
+
   return (
-    
     <Container>
+      <Header src={props.header}/>
+      {buildTopBg(props.sports)}
       <Grid>
         {buildGrid(props.articles)}
       </Grid>
+      {buildBottomBg(props.sports)}
     </Container>
   );
 }

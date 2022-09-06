@@ -13,13 +13,14 @@ export default function Multimedia(props) {
     position: relative;
     background-color: #376BF6;
     max-width: 100vw;
+    overflow: hidden;
   `
 
   const Header = styled.img`
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    left: 0;
+    left: 1em;
     right: 0;
     top: 3em;
     z-index: 5;
