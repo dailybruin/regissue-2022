@@ -9,7 +9,6 @@ import Card from "./Card";
 const Container = styled.div`
     background-color: #F8D84A;
     max-width: 100vw;
-    min-height: 100vh;
     position: relative;
     overflow: hidden;
 `;

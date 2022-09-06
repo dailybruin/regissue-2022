@@ -31,7 +31,7 @@ export default function Multimedia(props) {
     overflow: hidden; 
   `
 
-  const HeaderBackground = styled.img`
+  const HeaderBg = styled.img`
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -164,7 +164,7 @@ export default function Multimedia(props) {
   console.log(props.topPad)
   return (
     <Container>
-      <HeaderBackground src={DotsTop}/>
+      <HeaderBg src={DotsTop}/>
       <Header src={MultimediaHeader}/>
       <Grid>
         {buildGrid(props.articles)}

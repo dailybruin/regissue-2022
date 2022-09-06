@@ -80,6 +80,10 @@ export default function News_Sports(props) {
     width: 60%; 
     vertical-align: middle; 
     overflow: hidden; 
+
+    ${mediaQueries.mobile} {
+      width: 80%;
+    }
   `
 
   const SportsBottom = styled.img`
@@ -92,6 +96,10 @@ export default function News_Sports(props) {
     width: 60%; 
     vertical-align: middle; 
     overflow: hidden; 
+
+    ${mediaQueries.mobile} {
+      width: 80%;
+    }
   `
 
   const Grid = styled.div`
