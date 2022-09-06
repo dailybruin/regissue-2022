@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { mediaQueries } from "../shared/config";
+import OpinionBg from "../images/opinion.svg";
 
 import Card from "./Card";
 import { Fragment } from "react";
 
 export default function Opinion(props) {
   const Container = styled.div`
-    background: url(${props.background}) no-repeat center center;
+    background: url(${OpinionBg}) no-repeat center center;
     background-size: cover;
     max-width: 100vw;
   `

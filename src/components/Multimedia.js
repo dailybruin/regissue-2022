@@ -1,19 +1,76 @@
 import React from "react";
 import styled from "styled-components";
 import { mediaQueries } from "../shared/config";
-
+import MultimediaHeader from "../images/multimedia.svg";
+import DotsLeft from "../images/dots_left.svg";
+import DotsRight from "../images/dots_right.svg";
+import DotsTop from "../images/dots_top.svg";
 import Card from "./Card";
 import { Fragment } from "react";
 
 export default function Multimedia(props) {
   const Container = styled.div`
-    background: url(${props.background}) no-repeat center center;
-    background-size: cover;
+    position: relative;
+    background-color: #376BF6;
     max-width: 100vw;
   `
 
+  const Header = styled.img`
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 3em;
+    z-index: 5;
+
+    display: inline-block;
+    max-width: 100%; 
+    vertical-align: middle; 
+    overflow: hidden; 
+  `
+
+  const HeaderBackground = styled.img`
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+
+    display: inline-block;
+    max-width: 100%; 
+    vertical-align: middle; 
+    overflow: hidden; 
+  `
+
+  const LSide = styled.img`
+    position: absolute;
+    top: -4em;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    ${mediaQueries.mobile} {
+      display: none;
+    }
+  `
+
+  const RSide = styled.img`
+    position: absolute;
+    top: -1em;
+    right: 0;
+    z-index: 1;
+    height: 100%;
+    ${mediaQueries.mobile} {
+      display: none;
+    }
+  `
+
   const Grid = styled.div`
+    position: relative;
     width: 95%;
+    z-index: 10;
     height: fit-content;
     padding-top: 40em;
     padding-bottom: 5%;
@@ -36,6 +93,7 @@ export default function Multimedia(props) {
       width: 100vw;
       margin: auto;
       align-items: center;
+      padding-top: 21em;
     }
 
     .article_one {
@@ -105,9 +163,13 @@ export default function Multimedia(props) {
   console.log(props.topPad)
   return (
     <Container>
+      <HeaderBackground src={DotsTop}/>
+      <Header src={MultimediaHeader}/>
       <Grid>
         {buildGrid(props.articles)}
       </Grid>
+      <LSide src={DotsLeft}/>
+      <RSide src={DotsRight}/>
     </Container>
   );
 }

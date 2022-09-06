@@ -1,21 +1,61 @@
 import React from "react";
 import styled from "styled-components";
 import { mediaQueries } from "../shared/config";
+import ArtsHeader from "../images/arts.svg";
+import ArtsLeft from "../images/arts_left.svg";
+import ArtsRight from "../images/arts_right.svg";
 
 import Card from "./Card";
 import { Fragment } from "react";
 
 export default function Arts(props) {
   const Container = styled.div`
-    background: url(${props.background}) no-repeat center center;
-    background-size: cover;
+    position: relative;
+    background-color: #376BF6;
     max-width: 100vw;
   `
 
+   const Header = styled.img`
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 2em;
+      top: 3em;
+      z-index: 5;
+      
+      display: inline-block;
+      max-width: 100%; 
+      vertical-align: middle; 
+      overflow: hidden; 
+    `
+
+  const Lfooter = styled.img`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    ${mediaQueries.mobile} {
+      display: none;
+    }
+  `
+
+  const Rfooter = styled.img`
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    ${mediaQueries.mobile} {
+      display: none;
+    }
+  `
+
   const Grid = styled.div`
+    position: relative;
     width: 95%;
+    z-index: 10;
     height: fit-content;
-    padding-top: 40em;
+    padding-top: 42em;
     padding-bottom: 5%;
     margin: auto;
     display: grid;
@@ -35,6 +75,7 @@ export default function Arts(props) {
       width: 100vw;
       margin: auto;
       align-items: center;
+      padding-top: 20em;
     }
 
     .article_one {
@@ -104,9 +145,12 @@ export default function Arts(props) {
   console.log(props.topPad)
   return (
     <Container>
+      <Header src={ArtsHeader}/>
       <Grid>
         {buildGrid(props.articles)}
       </Grid>
+      <Lfooter src={ArtsLeft}/>
+      <Rfooter src={ArtsRight}/>
     </Container>
   );
 }

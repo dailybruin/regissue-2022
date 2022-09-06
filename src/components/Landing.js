@@ -27,6 +27,7 @@ const Credits = styled.div`
 `;
 
 export default function Landing(props) {
+  setTimeout(props.setLandingDisplayed(true), 500);
   return (
     <Container>
       <Illo src={props.image}></Illo>

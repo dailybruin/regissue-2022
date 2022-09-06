@@ -34,7 +34,7 @@ const ByLine = styled.div`
 export default function ArticleCard(props)
 {
     const Container = styled.div`
-        /* border: black 5px; */
+        border: solid black 6px;
         display: grid;
         grid-template-rows: 70% 30%;
         height: fit-content;

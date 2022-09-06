@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { mediaQueries } from "../shared/config";
+import QuadBg from "../images/quad.svg";
+
 
 import Card from "./Card";
 import { Fragment } from "react";
 
 export default function Quad(props) {
   const Container = styled.div`
-    background: url(${props.background}) no-repeat center center;
+    background: url(${QuadBg}) no-repeat center center;
     background-size: cover;
     max-width: 100vw;
   `
@@ -15,7 +17,7 @@ export default function Quad(props) {
   const Grid = styled.div`
     width: 95%;
     height: fit-content;
-    padding-top: 40em;
+    padding-top: 42em;
     padding-bottom: 5%;
     margin: auto;
     display: grid;
