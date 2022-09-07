@@ -69,12 +69,11 @@ export default function Prime(props)
             <Bg src={PrimeBg}/>
             <Grid>
                 <Card 
-                    article_headline={props.headline}
-                    article_byline={props.byline}
-                    article_image={props.article_image}
-                    article_url={props.article_url} /> 
+                    article_headline={props.articles.headline}
+                    article_byline={props.articles.byline}
+                    article_image={props.articles.article_image}
+                    article_url={props.articles.article_url} /> 
             </Grid>
         </Container>
     )
-    
 }

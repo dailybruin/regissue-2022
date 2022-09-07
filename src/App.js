@@ -14,6 +14,7 @@ import Opinion from "./components/Opinion";
 import Quad from "./components/Quad";
 import Prime from "./components/Prime";
 import Multimedia from "./components/Multimedia";
+import About from "./components/About";
 
 import News from "./images/news.svg";
 import Sports from "./images/sports.svg"
@@ -32,6 +33,8 @@ const AppContent = () => {
       .then((res) => res.json())
       .then((res) => setData(res.data["article.aml"]));
   }, []);
+
+  data && console.log(data.prime[0])
 
   return (
     <>
@@ -59,10 +62,13 @@ const AppContent = () => {
                   <Quad articles={data.quad}/>
                 </div>
                 <div id="prime">
-                  <Prime articles={data.prime}/>
+                  <Prime articles={data.prime[0]}/>
                 </div>
                 <div id="multimedia">
                   <Multimedia articles={data.multimedia}/>
+                </div>
+                <div id="about">
+                  <About />
                 </div>
                 <Footer/>
               </>
