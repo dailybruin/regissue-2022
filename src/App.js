@@ -3,10 +3,10 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import styled from 'styled-components';
 import './App.css';
 
+import NavBar from "./components/NavBar";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Landing from './components/Landing';
-import NavBar from "./components/NavBar";
 import EditorLetter from "./components/EditorLetter";
 import News_Sports from "./components/News_Sports";
 import Arts from "./components/Arts";

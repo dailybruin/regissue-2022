@@ -80,42 +80,34 @@ export default function Arts(props) {
 
     .article_one {
       grid-area: one;
-      background-color: gray;
     }
 
     .article_two {
       grid-area: two;
-      background-color: pink;
     }
 
     .article_three {
       grid-area: three;
-      background-color: blue;
     }
 
     .article_four {
       grid-area: four;
-      background-color: green;
     }
 
     .article_five {
       grid-area: five;
-      background-color: purple;
     }
 
     .article_six {
       grid-area: six;
-      background-color: orange;
     }
 
     .article_seven{
       grid-area: seven;
-      background-color: lightcoral;
     }
 
     .article_eight{
       grid-area: eight;
-      background-color: lightgreen;
     }
   `;
   

@@ -14,13 +14,13 @@ const Illo = styled.img`
 `;
 
 const Credits = styled.div`
+  position: absolute;
   font-family: 'Pangolin', cursive;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   color: white;
-  bottom: 0;
-  right: 10px;
-  padding-bottom: 15px;
+  bottom: 1em;
+  right: 1em;
   ${mediaQueries.mobile} {
     font-size: 8px;
   }

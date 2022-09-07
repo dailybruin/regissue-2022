@@ -91,22 +91,18 @@ export default function Opinion(props) {
 
     .article_one {
       grid-area: one;
-      background-color: gray;
     }
 
     .article_two {
       grid-area: two;
-      background-color: pink;
     }
 
     .article_three {
       grid-area: three;
-      background-color: blue;
     }
 
     .article_four {
       grid-area: four;
-      background-color: green;
     }
   `;
   

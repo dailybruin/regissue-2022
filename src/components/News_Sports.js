@@ -134,62 +134,50 @@ export default function News_Sports(props) {
 
     .article_one {
       grid-area: one;
-      background-color: gray;
     }
 
     .article_two {
       grid-area: two;
-      background-color: pink;
     }
 
     .article_three {
       grid-area: three;
-      background-color: blue;
     }
 
     .article_four {
       grid-area: four;
-      background-color: green;
     }
 
     .article_five {
       grid-area: five;
-      background-color: purple;
     }
 
     .article_six {
       grid-area: six;
-      background-color: orange;
     }
 
     .article_seven{
       grid-area: seven;
-      background-color: lightcoral;
     }
 
     .article_eight{
       grid-area: eight;
-      background-color: lightgreen;
     }
 
     .article_nine{
       grid-area: nine;
-      background-color: lightskyblue;
     }
 
     .article_ten{
       grid-area: ten;
-      background-color: olive;
     }
 
     .article_eleven{
       grid-area: eleven;
-      background-color: aquamarine;
     }
 
     .article_twelve{
       grid-area: twelve;
-      background-color: blueviolet;
     }
   `;
   

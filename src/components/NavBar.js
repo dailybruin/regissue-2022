@@ -15,7 +15,7 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: 3em;
+  margin-left: 1em;
   justify-content: center;
   width: fit-content;
   max-width: 90vw;
@@ -26,7 +26,7 @@ const Page = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 1.5em;
   color: black;
   text-align: center;
   text-transform: uppercase;
@@ -36,7 +36,8 @@ const Page = styled.div`
   padding: 2px 10px;
 
   ${mediaQueries.mobile} {
-      font-size: 14px;
+      font-size: 12px;
+      line-height: 1.2em;
   }
 `;
 

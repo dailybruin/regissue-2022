@@ -3,52 +3,90 @@ import styled from 'styled-components';
 import { mediaQueries } from '../shared/config';
 
 
+const Container = styled.div`
+    position: relative;
+    border: solid black 6px;
+    display: grid;
+    grid-template-rows: auto auto;
+    height: fit-content;
+    ${mediaQueries.mobile} {
+        width: 90vw;
+    }
+`
+
+const Article = styled.div`
+    display: none;
+    
+    ${Container}:hover & {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 15;
+        border-top: solid black 6px;
+        background-color: white;
+    }
+
+    ${mediaQueries.mobile} {
+        display: inline-block;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        border-top: solid black 6px;
+        background-color: white;
+    }
+`
+
 const Image = styled.img`
-    display: block;
-    width: 303px;
-    height: 290px;
-    box-sizing: content-box;
-    padding: 10px;
-    z-index: 12;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
     object-fit: cover;
 `
 
 const Headline = styled.a`
     display: block;
     font-family: 'Courier Prime', monospace;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 24px;
     line-height: 1em;
-    text-align: center;   
-    padding-bottom: 1em;
+    text-align: center;  
+    text-decoration: none;
+    color: black;
+    padding: 0.3em;
+    ${mediaQueries.mobile} {
+        font-size: 16px;
+        padding: 0.2em;
+    }
 `
 
 const ByLine = styled.div`
     display: block;
-    font-size: 18px;
+    font-family: 'Bangers', cursive;
+    font-size: 22px;
     font-weight: bold;
     line-height: 1em;
     text-align: center;
+    letter-spacing: 0.1em;
+    padding: 0.4em;
+    ${mediaQueries.mobile} {
+        font-size: 14px;
+        padding-top: 0.1em;
+        padding-bottom: 0.5em;
+    }
 `
 
 export default function ArticleCard(props)
 {
-    const Container = styled.div`
-        border: solid black 6px;
-        display: grid;
-        grid-template-rows: 70% 30%;
-        height: fit-content;
-        ${mediaQueries.mobile} {
-            width: 100%;
-        }
-    `
     return (
         <Container>
             <a href={props.article_url}><Image src={props.article_image}/></a>
-            <div>
+            <Article>
                 <Headline href={props.article_url}> {props.article_headline} </Headline>
                 <ByLine> By {props.article_byline}</ByLine>
-            </div>
+            </Article>
         </Container>
     )
 }
