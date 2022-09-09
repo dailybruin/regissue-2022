@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Pangolin&display=swap');
+
+#map{
+    height: 600px;
+    width: 70%;
+    float: right;
+    margin: 0;
+}
+#interactive-container{
+    height: 600px;
+    width: 95%;
+    border: 2px black solid;
+    margin: auto;
+    margin-top: 40px;
+}
+#quiz{
+    width: 27%;
+    padding: 10px;
+    float: left;
+}
+.pin-header, #header{
+    font-family: 'Bangers', cursive;
+}
+p{
+    font-family: 'Pangolin', cursive;
+}

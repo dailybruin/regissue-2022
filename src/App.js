@@ -3,7 +3,8 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import styled from 'styled-components';
 import './App.css';
 
-import NavBar from "./components/NavBar";
+//import NavBar from "./components/NavBar";
+import MyMap from './components/data-lecture-halls/lecture-hall-game'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Landing from './components/Landing';
@@ -38,13 +39,14 @@ const AppContent = () => {
 
   return (
     <>
-      {data && (
+      <MyMap/>
+      {/* {data && (
         <div className="App">
             <Header/>
             <Landing image={data.landing_image} credits={data.landing_credits} setLandingDisplayed={setLandingDisplayed}/>
             {landingDisplayed && (
               <>
-                <NavBar style={{ margin: "auto" }} />
+                {/* <NavBar style={{ margin: "auto" }} /> 
                 <EditorLetter letter = {data.letter}/>
                 <div id="news" >
                   <News_Sports sports={false} header={News} articles={data.news} />
@@ -74,7 +76,7 @@ const AppContent = () => {
               </>
             )}
         </div>
-      )}
+      )} */}
     </>
   );
 };
