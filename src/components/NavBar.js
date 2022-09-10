@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect }from "react";
 import styled from "styled-components";
 import { mediaQueries } from "../shared/config";
 
@@ -6,9 +6,20 @@ import { HashLink } from "react-router-hash-link";
 
 const StickyContainer = styled.div`
   position: sticky;
-  padding-top: 50px;
   top: 0;
   z-index: 100;
+  
+  .navbar{
+    background-color: #376BF6;
+    box-sizing: border-box;
+    padding-top: 50px;
+  }
+
+  .navbarChange{
+    background-color: transparent;
+    box-sizing: border-box;
+    padding-top: 50px;
+  }
 `;
 
 const Row = styled.div`
@@ -19,6 +30,10 @@ const Row = styled.div`
   justify-content: center;
   width: fit-content;
   max-width: 90vw;
+
+  ${mediaQueries.mobile} {
+      justify-content: left;
+  }
 `;
 
 const Page = styled.div`
@@ -42,8 +57,25 @@ const Page = styled.div`
 `;
 
 export default function NavBar(props) {
+  const [colorChange, setColorchange] = useState(false);
+
+  const changeNavbarColor = () =>{
+    if (window.innerWidth < 720 && window.scrollY >= 320)
+    {
+      setColorchange(true);
+    }
+    else if(window.scrollY >= 1200){
+       setColorchange(true);
+    }
+    else{
+       setColorchange(false);
+    }
+  };
+  window.addEventListener('scroll', changeNavbarColor);
+
   return (
     <StickyContainer>
+    <div className={colorChange ? 'navbarChange' : 'navbar'}>
       <Row>
         <HashLink
           to="#interactive"
@@ -84,6 +116,7 @@ export default function NavBar(props) {
           <Page>About</Page>
         </HashLink>
       </Row>
+    </div>
     </StickyContainer>
   );
 }
