@@ -19,9 +19,18 @@ const MyMap = () => {
 
     return (
       <div id = "interactive-container">
-        <div id = "quiz">
-        <Quiz></Quiz>
-        </div>
+        <h1 id = "header">Quiz: UCLA’s Top 10 Largest Lecture Halls</h1>
+            <p id="trivia-text">
+                Drag and drop the lecture halls below into the correct order by size. 
+                The largest should be at the top. When you have placed all the lecture halls, 
+                a map with the locations of the buildings for the top 10 largest ones will 
+                be displayed. 
+            </p>
+            <Quiz>
+            </Quiz>
+
+            
+
       <div id = "map">
         <Map 
           center={[lat, long]} 
@@ -52,5 +61,6 @@ const MyMap = () => {
       </div>
     )
   }
+
 
 export default MyMap;
