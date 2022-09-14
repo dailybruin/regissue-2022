@@ -3,7 +3,7 @@ import SortableList, { SortableItem } from 'react-easy-sort';
 import {arrayMoveImmutable} from 'array-move';
 
 const Quiz = () => {
-  const [items, setItems] = React.useState([
+  const [items, setItems] = React.useState([ 
     'Fowler Museum A103B',
     'Dodd Hall 147',
     'Moore Hall 100',
@@ -22,7 +22,7 @@ const Quiz = () => {
   }
 
   function checkAnswer() {
-    const [correctAnswers] = [
+    const correctAnswers = [
       'Moore Hall 100',
       'Haines Hall 39',
       'Broad Art Center 2160E',
@@ -34,18 +34,17 @@ const Quiz = () => {
       'Rolfe Hall 1200',
       'Kaplan Hall A51',
     ];
-// this is just here so it automatically is pushed as correct
-// correct so we can connect the map showing up when the button alerts 'correct'
-// i will fix this part asap sorryyy
-    if (2 === 2) { 
+
+    if (JSON.stringify(correctAnswers) == JSON.stringify(items)) { 
       alert("Correct :)");
     } else {
       alert("Try Again...");
-      console.log(correctAnswers)
     }
   }
 
-
+ // function showAnswers() {} ill try and add this so people 
+ // can bypass sorting it if they would like
+ 
   return (
     <>
     <SortableList onSortEnd={onSortEnd} className="list" draggedItemClassName="dragged">
@@ -55,7 +54,7 @@ const Quiz = () => {
         </SortableItem>
       ))}
     </SortableList>
-    <button onClick={checkAnswer}></button>    
+    <button onClick={checkAnswer}>Check your answers!</button>    
     </>
   )
 }
