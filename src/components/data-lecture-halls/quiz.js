@@ -57,15 +57,15 @@ const Quiz = () => {
 
   return (
     <>
-    <SortableList onSortEnd={onSortEnd} className="list" draggedItemClassName="dragged"  ghostClass ='ghost'>
+    <SortableList onSortEnd={onSortEnd} className="list" draggedItemClassName="dragged">
       {items.map((item) => (
         <SortableItem key={item}>
           <div className="item">{item}</div>
         </SortableItem>
       ))}
     </SortableList>
-    <button onClick={checkAnswer}>Check your answers!</button>    
-    <button onClick={showAnswers}>Show answers</button>
+    <button onClick={checkAnswer} variant="check">Check your answers!</button>    
+    <button onClick={showAnswers} variant="show">Show answers</button>
     </>
   )
 }

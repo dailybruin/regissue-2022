@@ -21,6 +21,29 @@ class MyMap extends React.Component {
         const position = [this.state.lat, this.state.lng];
         return (
             <div className="trivia-container">
+                <h1 className = "header">Quiz: UCLA’s Top 10 Largest Lecture Halls</h1>
+                <h1 className="trivia-text">
+                        Drag and drop the lecture halls below into the correct order by size. 
+                        The largest should be at the top. When you have placed all the lecture halls, 
+                        a map with the locations of the buildings for the top 10 largest ones will 
+                        be displayed. 
+                        </h1>
+                <ul id="lectureHalls">
+                    <li>La Kretz Hall 100</li>
+	                <li>Franz Hall 1178</li>
+	                <li>Haines Hall 39</li>
+	                <li>Young Hall CS50</li>
+	                <li>Rolfe Hall 1200</li>
+	                <li>Moore Hall 100</li>
+	                <li>Fowler Museum A103B</li>
+	                <li>Kaplan Hall A51</li>	     
+	                <li>Broad Art Center 2160E</li>
+	                <li>Dodd Hall 147</li>
+                </ul>
+                <button onclick="checkAnswer()">Check your answers!</button>
+                <script src = "quiz.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+                
                 <div className="sidebar">
                     {/* <SideBar
                         currentQuestion={this.state.currentQuestion}

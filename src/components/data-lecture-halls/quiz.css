@@ -4,21 +4,23 @@ body {
     margin: 0;
     padding: 5px;
     font-family: Pangolin;
+    font-size: 40%;
 
   }
   
   .list {
     user-select: none;
-    width: max-content;
-    height: max-content;
 
   }
   
   .item {
-    justify-content: left;
-    align-items: left;
+    flex-shrink: 0;
+    display: flex;
     background-color: #f5e559; 
-    margin: 10px; 
+    border: 1px black solid;
+    padding: 1%;
+    width: max-content;
+    margin: 2%; 
     color: black;
     cursor: grab;
   }
@@ -26,5 +28,19 @@ body {
   .dragged {
     background-color: #c6dfff;
   }
- 
-  
+
+
+  button {
+    font-family: Pangolin;
+    font-size: 40%;
+    flex-shrink: 0;
+    align-items: center;
+    background-color: #c6dfff; 
+    width: max-content;
+    margin: 2%; 
+    color: black;
+   }
+   
+
+   
+   
