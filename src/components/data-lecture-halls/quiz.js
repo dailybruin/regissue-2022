@@ -1,6 +1,7 @@
 import React from 'react';
 import SortableList, { SortableItem } from 'react-easy-sort';
 import {arrayMoveImmutable} from 'array-move';
+import "./quiz.css";
 
 const Quiz = () => {
   const [items, setItems] = React.useState([ 
@@ -42,12 +43,15 @@ const Quiz = () => {
     }
   }
 
- // function showAnswers() {} ill try and add this so people 
- // can bypass sorting it if they would like
- 
+// will implement soon!  - priya 
+ function showAnswers() {
+   alert("This isn't working yet :( Come back later..");
+   return false;
+ } 
+
   return (
     <>
-    <SortableList onSortEnd={onSortEnd} className="list" draggedItemClassName="dragged">
+    <SortableList onSortEnd={onSortEnd} className="list" draggedItemClassName="dragged"  ghostClass ='ghost'>
       {items.map((item) => (
         <SortableItem key={item}>
           <div className="item">{item}</div>
@@ -55,6 +59,7 @@ const Quiz = () => {
       ))}
     </SortableList>
     <button onClick={checkAnswer}>Check your answers!</button>    
+    <button onClick={showAnswers}>Show answers</button>
     </>
   )
 }
