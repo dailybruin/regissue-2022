@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 5px;
     font-family: Pangolin;
-    font-size: 40%;
+    font-size: 75%;
 
   }
   
@@ -14,13 +14,12 @@ body {
   }
   
   .item {
-    flex-shrink: 0;
     display: flex;
     background-color: #f5e559; 
     border: 1px black solid;
     padding: 1%;
     width: max-content;
-    margin: 2%; 
+    margin: 5%; 
     color: black;
     cursor: grab;
   }
@@ -32,15 +31,16 @@ body {
 
   button {
     font-family: Pangolin;
-    font-size: 40%;
-    flex-shrink: 0;
+    font-size: 100%;
     align-items: center;
     background-color: #c6dfff; 
     width: max-content;
-    margin: 2%; 
+    margin: 3%; 
     color: black;
    }
    
-
+text {
+    align-items: center;
+}
    
    

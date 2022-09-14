@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Pangolin&display=swap');
 
 #map{
-    height: 400px;
-    width: 90%;
-    float: none;
+    height: 500px;
+    width: 50%;
+    margin-left: auto;
     margin: 3%;
     border: 2px black solid;
+    display: flex;
+    justify-content: right;
 }
 #header {
     text-align: center;
@@ -25,9 +27,9 @@
     margin-bottom: 10px;
 }
 #quiz-container{
-    width: 60%;
+    width: 40%;
     padding: 5px;
-    float: none;
+    float: left;
 }
 .pin-header, #header{
     font-family: 'Bangers', cursive;
@@ -37,9 +39,10 @@
 p#trivia-text{
     font-family: 'Pangolin', cursive;
     margin: 5%;
-    text-align: right;
-    width: 50%;
-    font-size: 20px;
-    float: right;
+    text-align: center;
+    align-items: center;
+    width: 90%;
+    font-size: 15px;
+    float: none;
 
 }
