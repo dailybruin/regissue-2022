@@ -2,6 +2,7 @@ import React from 'react';
 import SortableList, { SortableItem } from 'react-easy-sort';
 import {arrayMoveImmutable} from 'array-move';
 import "./quiz.css";
+import { config } from "./index";
 
 const Quiz = () => {
   const [items, setItems] = React.useState([ 
@@ -35,9 +36,14 @@ const Quiz = () => {
       'Rolfe Hall 1200',
       'Kaplan Hall A51',
     ];
+	let correct = []
+    config.locations.map((loc, index) =>{
+		correct.push(items[index]=== loc.name);
+	})
 
-    if (JSON.stringify(correctAnswers) == JSON.stringify(items)) { 
+	if (JSON.stringify(correctAnswers) == JSON.stringify(items)) { 
       alert("Correct :)");
+	  
     } else {
       alert("Try Again...");
     }
