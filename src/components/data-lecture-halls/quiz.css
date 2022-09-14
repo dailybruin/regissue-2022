@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Pangolin&display=swap');
+
+body {
+    margin: 0;
+    padding: 5px;
+    font-family: Pangolin;
+
+  }
+  
+  .list {
+    user-select: none;
+    width: max-content;
+    height: max-content;
+
+  }
+  
+  .item {
+    justify-content: left;
+    align-items: left;
+    background-color: #f5e559; 
+    margin: 10px; 
+    color: black;
+    cursor: grab;
+  }
+  
+  .dragged {
+    background-color: #c6dfff;
+  }
+ 
+  
