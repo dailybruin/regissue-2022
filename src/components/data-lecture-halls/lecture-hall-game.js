@@ -7,6 +7,9 @@ import L from "leaflet";
 import { config } from "./index";
 import Pin from "./blue-pin-1.svg";
 import Quiz from "./quiz.js";
+import SortableList, { SortableItem } from 'react-easy-sort';
+import {arrayMoveImmutable} from 'array-move';
+import "./quiz.css";
 
 export const pin = new L.Icon({
   iconUrl: Pin,
@@ -17,7 +20,64 @@ const MyMap = () => {
   const [long, setLong] = useState(-118.44415583155065);
   const [zoom, setZoom] = useState(16);
   const [correct, setCorrect] = useState(new Array(10).fill(false));
+  const [correctNum, setCorrectNum] = useState(0);
+  const [items, setItems] = React.useState([ 
+    'Fowler Museum A103B',
+    'Dodd Hall 147',
+    'Moore Hall 100',
+    'Kaplan Hall A51',
+    'La Kretz Hall 110',
+    'Young Hall CS50',
+    'Rolfe Hall 1200',
+    'Franz Hall 1178',
+    'Broad Art Center 2160E',
+    'Haines Hall 39',
+  ]);
 
+
+  const onSortEnd = (oldIndex, newIndex) => {
+    setItems((array) => arrayMoveImmutable(array, oldIndex, newIndex))
+  }
+
+  function checkAnswer() {
+    let correct_num = 0;
+    let correct_answers = [];
+      config.locations.map((loc, index) =>{
+      correct_answers.push(items[index]=== loc.name);
+      if (items[index]=== loc.name){
+        correct_num += 1;
+      }
+      })
+  // console.log(correct_answers);
+    setCorrect(correct_answers);
+    setCorrectNum(correct_num);
+    if (correctNum === 10) { 
+      alert("Congratulations! You correctly ordered all the lecture halls. Use the map to learn more about each lecture hall location.");
+    
+    } else {
+      alert(`You have gotten ${correctNum} out of 10 answers correct. The locations you have correct will be shown on the map.`);
+    }
+
+  }
+
+ function showAnswers() {
+  const correctAnswers = [
+      'Moore Hall 100',
+      'Haines Hall 39',
+      'Broad Art Center 2160E',
+      'Dodd Hall 147',
+      'La Kretz Hall 110',
+      'Young Hall CS50',
+      'Fowler Museum A103B',
+      'Franz Hall 1178',
+      'Rolfe Hall 1200',
+      'Kaplan Hall A51',
+    ];
+  setItems(correctAnswers)
+  setCorrect(new Array(10).fill(true))
+  setCorrectNum(10)
+   return false;
+ } 
     return (
       <div id = "interactive-container">
         <h1 id = "header">Quiz: UCLA’s Top 10 Largest Lecture Halls</h1>
@@ -28,8 +88,17 @@ const MyMap = () => {
                   be displayed. 
               </p>
             <div id = "quiz-container">
-              <Quiz
-                correct = {setCorrect}/>
+              <>
+                <SortableList onSortEnd={onSortEnd} className="list" draggedItemClassName="dragged">
+                  {items.map((item, index) => (
+                    <SortableItem key={item}>
+                      <div className="item">{item}</div>
+                    </SortableItem>
+                  ))}
+                </SortableList>
+                <button onClick={checkAnswer} variant="check">Check your answers!</button>    
+                <button onClick={showAnswers} variant="show">Show answers</button>
+                </>
             </div>
 
             
