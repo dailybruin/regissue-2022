@@ -9,7 +9,7 @@ import Pin from "./blue-pin-1.svg";
 import Quiz from "./quiz.js";
 import SortableList, { SortableItem } from 'react-easy-sort';
 import {arrayMoveImmutable} from 'array-move';
-import "./quiz.css";
+// import "./quiz.css";
 
 export const pin = new L.Icon({
   iconUrl: Pin,
@@ -20,7 +20,6 @@ const MyMap = () => {
   const [long, setLong] = useState(-118.44415583155065);
   const [zoom, setZoom] = useState(16);
   const [correct, setCorrect] = useState(new Array(10).fill(false));
-  const [correctNum, setCorrectNum] = useState(0);
   const [items, setItems] = React.useState([ 
     'Fowler Museum A103B',
     'Dodd Hall 147',
@@ -40,24 +39,27 @@ const MyMap = () => {
   }
 
   function checkAnswer() {
-    let correct_num = 0;
+    const initialValue = 0;
+    
     let correct_answers = [];
       config.locations.map((loc, index) =>{
       correct_answers.push(items[index]=== loc.name);
-      if (items[index]=== loc.name){
-        correct_num += 1;
-      }
       })
-  // console.log(correct_answers);
+
+    let sum = correct_answers.reduce(
+      (previousValue, currentValue) => previousValue + currentValue,
+      initialValue
+      );
+    console.log(sum)
     setCorrect(correct_answers);
-    setCorrectNum(correct_num);
-    if (correctNum === 10) { 
+    console.log(correct)
+
+    if (sum === 10) { 
       alert("Congratulations! You correctly ordered all the lecture halls. Use the map to learn more about each lecture hall location.");
     
     } else {
-      alert(`You have gotten ${correctNum} out of 10 answers correct. The locations you have correct will be shown on the map.`);
+      alert(`You have gotten ${sum} out of 10 answers correct. The locations you have correct will be shown on the map.`);
     }
-
   }
 
  function showAnswers() {
@@ -75,17 +77,14 @@ const MyMap = () => {
     ];
   setItems(correctAnswers)
   setCorrect(new Array(10).fill(true))
-  setCorrectNum(10)
-   return false;
  } 
     return (
       <div id = "interactive-container">
         <h1 id = "header">Quiz: UCLA’s Top 10 Largest Lecture Halls</h1>
         <p id="trivia-text">
                   Drag and drop the lecture halls below into the correct order by size. 
-                  The largest should be at the top. When you have placed all the lecture halls, 
-                  a map with the locations of the buildings for the top 10 largest ones will 
-                  be displayed. 
+                  The largest should be at the top. When you have placed all the lecture halls check your answers. 
+                  A map with the locations of the buildings you've ordered correctly will display.  
               </p>
             <div id = "quiz-container">
               <>
@@ -115,7 +114,6 @@ const MyMap = () => {
             attribution='&copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {console.log(correct)}
           {config.locations.map((loc, index) => { 
             return (<Marker
                 key={loc.name}

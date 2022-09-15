@@ -46,3 +46,46 @@ p#trivia-text{
     float: none;
 
 }
+
+body {
+    margin: 0;
+    padding: 5px;
+    font-family: Pangolin;
+    font-size: 75%;
+
+  }
+  
+  .list {
+    user-select: none;
+
+  }
+  
+  .item {
+    display: flex;
+    background-color: #f5e559; 
+    border: 1px black solid;
+    padding: 1%;
+    width: max-content;
+    margin: 5%; 
+    color: black;
+    cursor: grab;
+  }
+  
+  .dragged {
+    background-color: #c6dfff;
+  }
+
+
+  button {
+    font-family: Pangolin;
+    font-size: 100%;
+    align-items: center;
+    background-color: #c6dfff; 
+    width: max-content;
+    margin: 3%; 
+    color: black;
+   }
+   
+text {
+    align-items: center;
+}
