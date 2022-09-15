@@ -3,89 +3,83 @@
 #map{
     height: 500px;
     width: 50%;
-    margin-left: auto;
-    margin: 3%;
+    margin: 0;
     border: 2px black solid;
     display: flex;
     justify-content: right;
 }
 #header {
     text-align: center;
-    font-size: 20px;
-    border: 2px black solid;
-    margin: 5px;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    font-size: 80px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 2px black solid;
+    background-color: #6ADC44;
+    width: 100%
 }
 
 #interactive-container{
-    height: 80%;
+    height: 90vh;
     width: 90%;
     border: 2px black solid;
     margin: auto;
     margin-top: 40px;
     margin-bottom: 10px;
+    background-color: #376BF6;
 }
 #quiz-container{
     width: 40%;
-    padding: 5px;
+    /* padding: 5px; */
     float: left;
+    align-items: center;
 }
 .pin-header, #header{
     font-family: 'Bangers', cursive;
-    
-
 }
-p#trivia-text{
+#trivia-text{
     font-family: 'Pangolin', cursive;
-    margin: 5%;
+    margin: 1px;
     text-align: center;
     align-items: center;
     width: 90%;
     font-size: 15px;
     float: none;
-
+    border-bottom: black 1px solid
+}
+  
+.list {
+  user-select: none;
+  align-items: center;
+  margin: auto;
 }
 
-body {
-    margin: 0;
-    padding: 5px;
-    font-family: Pangolin;
-    font-size: 75%;
+.item {
+  display: flex;
+  background-color: #F8D84A; 
+  font-family: Pangolin;
+  align-items: center;
+  border: 1px green solid;
+  /* padding: 2px; */
+  width: 60px;
+  margin: 1px; 
+  color: black;
+  cursor: grab;
+}
 
+.dragged {
+  background-color: #c6dfff;
+}
+
+button {
+  font-family: Pangolin;
+  font-size: 100%;
+  align-items: center;
+  background-color: #c6dfff; 
+  width: max-content;
+  margin: 1px; 
+  color: orange;
   }
   
-  .list {
-    user-select: none;
-
-  }
-  
-  .item {
-    display: flex;
-    background-color: #f5e559; 
-    border: 1px black solid;
-    padding: 1%;
-    width: max-content;
-    margin: 5%; 
-    color: black;
-    cursor: grab;
-  }
-  
-  .dragged {
-    background-color: #c6dfff;
-  }
-
-
-  button {
-    font-family: Pangolin;
-    font-size: 100%;
-    align-items: center;
-    background-color: #c6dfff; 
-    width: max-content;
-    margin: 3%; 
-    color: black;
-   }
-   
 text {
-    align-items: center;
+  align-items: center;
 }

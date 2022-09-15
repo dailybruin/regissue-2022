@@ -82,10 +82,10 @@ const MyMap = () => {
       <div id = "interactive-container">
         <h1 id = "header">Quiz: UCLA’s Top 10 Largest Lecture Halls</h1>
         <p id="trivia-text">
-                  Drag and drop the lecture halls below into the correct order by size. 
-                  The largest should be at the top. When you have placed all the lecture halls check your answers. 
-                  A map with the locations of the buildings you've ordered correctly will display.  
-              </p>
+          Drag and drop the lecture halls below into the correct order by size. 
+          The largest should be at the top. When you have placed all the lecture halls check your answers. 
+          A map with the locations of the buildings you've ordered correctly will display.  
+        </p>
             <div id = "quiz-container">
               <>
                 <SortableList onSortEnd={onSortEnd} className="list" draggedItemClassName="dragged">
@@ -128,7 +128,6 @@ const MyMap = () => {
               </Marker>);
         })}
         </Map>
-      <div>text</div>
       </div>
       </div>
     )
