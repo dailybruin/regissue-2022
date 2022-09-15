@@ -11,6 +11,7 @@ const Container = styled.div`
 const Illo = styled.img`
   width: 100vw;
   height: auto;
+  object-fit: cover;
 `;
 
 const Credits = styled.div`

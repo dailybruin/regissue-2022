@@ -35,7 +35,7 @@ const AppContent = () => {
       .then((res) => setData(res.data["article.aml"]));
   }, []);
 
-  data && console.log(data.prime[0])
+  // data && console.log(data.prime[0])
 
   return (
     <>
@@ -70,7 +70,7 @@ const AppContent = () => {
                   <Multimedia articles={data.multimedia}/>
                 </div>
                 <div id="about">
-                  <About />
+                  <About staff={data.staff}/>
                 </div>
                 <Footer/>
               </>

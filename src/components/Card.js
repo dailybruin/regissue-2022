@@ -8,7 +8,8 @@ const Container = styled.div`
     border: solid black 6px;
     display: grid;
     grid-template-rows: auto auto;
-    height: fit-content;
+    height: 100%;
+    box-sizing: border-box;
     ${mediaQueries.mobile} {
         width: 90vw;
     }
@@ -45,6 +46,7 @@ const Image = styled.img`
     height: 100%;
     z-index: 8;
     object-fit: cover;
+    margin: none;
 `
 
 const Headline = styled.a`
