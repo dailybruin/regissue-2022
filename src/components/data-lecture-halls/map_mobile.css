@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Pangolin&display=swap');
-
+@media (max-width: 1290px){
 #map{
-    height: 500px;
-    width: 50%;
-    margin: 0;
+    height: 400px;
+    width: 95%;
+    margin: auto;
     border: 2px black solid;
     display: flex;
-    justify-content: right;
 }
 #header {
     text-align: center;
-    font-size: 80px;
+    font-size: 35px;
     margin-top: 0;
     margin-bottom: 0;
     border-bottom: 2px black solid;
@@ -30,7 +29,7 @@
 }
 
 #interactive-container{
-    height: 700px;
+    height: 1000px;
     width: 90%;
     border: 2px black solid;
     margin: auto;
@@ -39,10 +38,10 @@
     background-color: #376BF6;
 }
 #game{
-  height: 550px; 
+  height: 783px; 
 }
 #quiz-container{
-    width: 40%;
+    width: 100%;
     /* padding: 5px; */
     float: left;
     align-items: center;
@@ -64,7 +63,7 @@
     text-align: center;
     align-items: center;
     width: 100%;
-    font-size: 18px;
+    font-size: 15px;
     float: none;
     border-bottom: black 1px solid;
     background-color: #6ADC44;
@@ -81,12 +80,12 @@
   background-color: #F8D84A; 
   font-family: Pangolin;
   align-items: center;
-  font-size: 18px;
+  font-size: 15px;
   border: 3px black solid;
   /* padding: 2px; */
   width: 300px;
   height: 25px;
-  margin: 15px; 
+  margin: auto; 
   color: black;
   cursor: grab;
 }
@@ -95,16 +94,13 @@
   background-color: #c6dfff;
 }
 
-button {
+#buttons {
+  display: inline;
   font-family: Pangolin;
-  font-size: 18px;
+  font-size: 15px;
   align-items: center;
-  background-color: #c6dfff; 
   width: max-content;
-  margin: 5px; 
+  margin: auto; 
   color: black;
-  }
-  
-text {
-  align-items: center;
+}
 }

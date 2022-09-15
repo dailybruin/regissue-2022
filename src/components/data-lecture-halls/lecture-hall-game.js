@@ -4,14 +4,13 @@ import { Map, TileLayer, Marker, useMap } from 'react-leaflet'
 import {Popup as LeafletPopup} from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
 import "./map.css"
+import "./map_mobile.css"
 import L from "leaflet";
 import { config } from "./index";
 import Pin from "./blue-pin-1.svg";
-// import Quiz from "./quiz.js";
 import SortableList, { SortableItem } from 'react-easy-sort';
 import {arrayMoveImmutable} from 'array-move';
 import Popup from 'reactjs-popup'
-// import "./quiz.css";
 
 export const pin = new L.Icon({
   iconUrl: Pin,
@@ -90,8 +89,8 @@ const MyMap = () => {
           The largest should be at the top. When you have placed all the lecture halls check your answers. 
           A map with the locations of the buildings you've ordered correctly will display.  
         </p>
+        <div id = "game">
             <div id = "quiz-container">
-              <>
                 <SortableList onSortEnd={onSortEnd} className="list" draggedItemClassName="dragged">
                   {items.map((item, index) => (
                     <SortableItem key={item}>
@@ -108,9 +107,10 @@ const MyMap = () => {
           >
             close modal
           </button></Popup>     */}
+          <div id = "buttons">
                 <button onClick={checkAnswer} variant="check" modal>Check your answers!</button>
                 <button onClick={showAnswers} variant="show">Show answers</button>
-                </>
+          </div>
             </div>   
       <div id = "map">
         <Map 
@@ -139,6 +139,8 @@ const MyMap = () => {
         })}
         </Map>
       </div>
+      </div>
+      <div id = "byline">Sources: UCLA Center for the Advancement of Teaching. Interactive by Lindsey Parungo Data editor and Priya Kanneboyina assistant Data editor.</div>
       </div>
     )
   }
