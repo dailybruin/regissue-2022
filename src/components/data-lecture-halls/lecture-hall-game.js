@@ -3,8 +3,8 @@ import React, { StrictMode, useEffect, useRef, useState } from 'react'
 import { Map, TileLayer, Marker, useMap } from 'react-leaflet'
 import {Popup as LeafletPopup} from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
-import "./map.css"
-import "./map_mobile.css"
+import "./map_mobile.css";
+import "./map.css";
 import L from "leaflet";
 import { config } from "./index";
 import Pin from "./blue-pin-1.svg";
@@ -20,6 +20,7 @@ const MyMap = () => {
   const [lat, setLat] = useState(34.07162238659867);
   const [long, setLong] = useState(-118.44415583155065);
   const [zoom, setZoom] = useState(16);
+  const [popupText, setPopupText] = useState(null);
   const [correct, setCorrect] = useState(new Array(10).fill(false));
   const [open, setOpen] = useState(false);
   const [items, setItems] = React.useState([ 
@@ -58,11 +59,12 @@ const MyMap = () => {
     console.log(correct)
 
     if (sum === 10) { 
-      alert("Congratulations! You correctly ordered all the lecture halls. Use the map to learn more about each lecture hall location.");
+        setPopupText("Congratulations! You correctly ordered all the lecture halls. Use the map to learn more about each lecture hall location.");
     
     } else {
-      alert(`You have gotten ${sum} out of 10 answers correct. The locations you have correct will be shown on the map.`);
+        setPopupText(`You have gotten ${sum} out of 10 answers correct. The locations you have correct will be shown on the map.`);
     }
+    setOpen(true)
   }
 
  function showAnswers() {
@@ -98,18 +100,17 @@ const MyMap = () => {
                     </SortableItem>
                   ))}
                 </SortableList>
-                {/* <Popup open = {open} trigger = {<button onClick={checkAnswer} variant="check" modal>Check your answers!</button>}>
-                <button
-            className="button"
-            onClick={() => {
-              close();
-            }}
-          >
-            close modal
-          </button></Popup>     */}
+                <Popup open = {open} modal onClose = {close}>
+                  <div id = "modal">
+                  <p>{popupText}</p>
+                  <button className="option-button close" onClick={close}>
+                      Close
+                    </button>
+                  </div>
+                </Popup>    
           <div id = "buttons">
-                <button onClick={checkAnswer} variant="check" modal>Check your answers!</button>
-                <button onClick={showAnswers} variant="show">Show answers</button>
+                <button className = 'option-button' onClick={checkAnswer} variant="check" modal>Check your answers!</button>
+                <button className = 'option-button' onClick={showAnswers} variant="show">Show answers</button>
           </div>
             </div>   
       <div id = "map">
