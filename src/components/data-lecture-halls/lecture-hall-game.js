@@ -88,7 +88,7 @@ const MyMap = () => {
         <h1 id = "header">Quiz: UCLA’s Top 10 Largest Lecture Halls</h1>
         <p id="trivia-text">
           Drag and drop the lecture halls below into the correct order by size. 
-          The largest should be at the top. When you have placed all the lecture halls check your answers. 
+          The largest should be at the top. When you have placed all the lecture halls, check your answers. 
           A map with the locations of the buildings you've ordered correctly will display.  
         </p>
         <div id = "game">
@@ -141,7 +141,7 @@ const MyMap = () => {
         </Map>
       </div>
       </div>
-      <div id = "byline">Sources: UCLA Center for the Advancement of Teaching. Interactive by Lindsey Parungo Data editor and Priya Kanneboyina assistant Data editor.</div>
+      <div id = "byline">Sources: UCLA Center for the Advancement of Teaching. Interactive by Lindsey Parungo, Data editor and Priya Kanneboyina, assistant Data editor.</div>
       </div>
     )
   }
