@@ -74,7 +74,7 @@ export default function NavBar(props) {
   window.addEventListener('scroll', changeNavbarColor);
 
   return (
-    <StickyContainer>
+    <StickyContainer style = {{zIndex: 1011}}>
     <div className={colorChange ? 'navbarChange' : 'navbar'}>
       <Row>
         <HashLink
