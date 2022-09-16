@@ -7,61 +7,63 @@ import BlueBuildings from "../images/BlueBg.svg";
 const Container = styled.div`
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: fit-content;
   background-image: url(${BlueBuildings});
   background-size: cover;
   margin-top: 4em;
-  
-  ${mediaQueries.mobile} {
-    position: static;
-    height: 60vh;
-  }
-`;
+  box-sizing: border-box;
 
-const LetterGrid = styled.div`
-  position: absolute;
   display: grid;
   grid-template-rows: auto auto;
   row-gap: 2em;
-  width: 45%;
-  left: 7em;
-  bottom: 7em;
+  padding-top: 10em;
+  padding-bottom: 7em;
+  padding-left: 7em;
+  overflow: wrap;
+  
   ${mediaQueries.mobile} {
     position: static;
-    margin: auto;
-    width: 90%;
+    height: fit-content;
     row-gap: 1em;
+    padding: 3em;
   }
-`
+`;
 
 const LetterHeader = styled.div`
-  width: 70%;
+  width: 35%;
   height: fit-content;
   background-color: #F8D84A;
   font-family: 'Bangers', cursive;
   font-size: 32px;
   line-height: 1.5em;
   border: solid black 4px;
+  box-sizing: content-box;
+  text-align: left;
+  padding-left: 2%;
+
   ${mediaQueries.mobile} {
     font-size: 18px;
     line-height: 1em;
-    width: 85%;
-    margin-top: 10%;
+    width: 90%;
+    margin: auto;
+    padding: 2% 2%;
   }
 `;
 
 const LetterBox = styled.div`
   background-color: #F8D84A;
-  width: 100%;
+  width: 50%;
   border: solid black 4px;
-`;
-
-const Content = styled.div`
-  margin: auto;
   padding: 2% 2%;
   font-size: 24px;
   line-height: 1.5em;
   text-align: left;
+  box-sizing: content-box;
+
+  ${mediaQueries.mobile} {
+      width: 90%;
+      margin: auto;
+    }
 
   p {
     margin-top: 0;
@@ -75,20 +77,16 @@ const Content = styled.div`
 export default function EditorLetter(props) {
   return (
     <Container>
-        <LetterGrid>
           <LetterHeader>
               MEANWHILE... A LETTER FROM THE EDITORS...
           </LetterHeader>
           <LetterBox>
-              <Content>
-                  {props.letter.map((info) => {
-                      if (info.type == "text") {
-                          return <p>{info.value}</p>;
-                      } 
-                  })}
-              </Content>
+                {props.letter.map((info) => {
+                    if (info.type == "text") {
+                        return <p>{info.value}</p>;
+                    } 
+                })}
           </LetterBox>
-        </LetterGrid>
     </Container>
   );
 }
