@@ -9,9 +9,9 @@ const Container = styled.div`
 `
 
 const Grid = styled.div`
-    width: 90%;
+    width: 80%;
     column-count: 2;
-    column-gap: 3em;
+    column-gap: 10em;
     margin: auto;
     break-inside: avoid;
 
@@ -103,16 +103,20 @@ export default function About(props)
         <Container>
             <SpeechBubble src={Apply}/>
             <Header>Daily Bruin Editorial Staff</Header>
-            <Management>
-                <SectionName>Management</SectionName>
-                <p>VICTORIA LI | Editor in chief </p>
-                <p>OLIVIA SIMONS | Managing editor</p>
-                <p>DAVID RIMER | Digital managing editor </p>
-            </Management>
             <Grid>
                 {props.staff.map(section => {
+                    if (section.type == 'management') {
+                        return (
+                            <Block>
+                                <SectionName>{section.type}</SectionName>
+                                <p>{section.value.eic}</p>
+                                <p>{section.value.me}</p>
+                                <p>{section.value.dme}</p>
+                            </Block>
+                        )
+                    }
                     if (section.type == 'news' || section.type == "opinion" || section.type == "arts" || section.type == "sports"
-                    || section.type == "data_graphics" || section.type == "photo" || section.type == "bruinwalk" 
+                    || section.type == "data" || section.type == "graphics" || section.type == "photo" || section.type == "bruinwalk" 
                     || section.type == "quad" || section.type == "bruinwalk") {
                         return (
                             <Block>

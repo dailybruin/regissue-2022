@@ -7,9 +7,10 @@ import BlueBuildings from "../images/BlueBg.svg";
 const Container = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background-image: url(${BlueBuildings});
   background-size: cover;
+  margin-top: 4em;
   
   ${mediaQueries.mobile} {
     position: static;

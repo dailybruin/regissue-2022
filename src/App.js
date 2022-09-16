@@ -3,7 +3,7 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import styled from 'styled-components';
 import './App.css';
 
-//import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar";
 import MyMap from './components/data-lecture-halls/lecture-hall-game'
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -20,8 +20,6 @@ import About from "./components/About";
 import News from "./images/news.svg";
 import Sports from "./images/sports.svg"
 
-// TODO: fix backgrounds, set up navbar (make sure landing is rendered first, look at grad issue)
-// TODO: set up article card, do ABOUT page
 
 const AppContent = () => {
   const [ data, setData ] = useState(null);
@@ -39,14 +37,16 @@ const AppContent = () => {
 
   return (
     <>
-      <MyMap/>
-      {/* {data && (
+      {data && (
         <div className="App">
             <Header/>
             <Landing image={data.landing_image} credits={data.landing_credits} setLandingDisplayed={setLandingDisplayed}/>
             {landingDisplayed && (
               <>
-                {/* <NavBar style={{ margin: "auto" }} /> 
+                <NavBar style={{ margin: "auto" }} /> 
+                <div id="interactive">
+                  <MyMap/>
+                </div>
                 <EditorLetter letter = {data.letter}/>
                 <div id="news" >
                   <News_Sports sports={false} header={News} articles={data.news} />
@@ -70,13 +70,13 @@ const AppContent = () => {
                   <Multimedia articles={data.multimedia}/>
                 </div>
                 <div id="about">
-                  <About />
+                  <About staff={data.staff}/>
                 </div>
                 <Footer/>
               </>
             )}
         </div>
-      )} */}
+      )}
     </>
   );
 };

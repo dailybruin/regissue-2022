@@ -7,10 +7,10 @@ import { HashLink } from "react-router-hash-link";
 const StickyContainer = styled.div`
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200;
   
   .navbar{
-    background-color: #376BF6;
+    background-color: transparent;
     box-sizing: border-box;
     padding-top: 50px;
   }

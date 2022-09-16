@@ -51,7 +51,7 @@ const Image = styled.img`
 
 const Headline = styled.a`
     display: block;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Pangolin';
     font-size: 24px;
     line-height: 1em;
     text-align: center;  
