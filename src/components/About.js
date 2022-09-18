@@ -130,7 +130,7 @@ export default function About(props)
                     else if (section.type == "design" || section.type == "social_media") {
                         return (
                             <Block>
-                                <SectionName>{section.type}</SectionName>
+                                <SectionName>{section.value.name}</SectionName>
                                 <p>{section.value.director}</p>
                                 <p>{section.value.assistant_directors}</p>
                                 <p>{section.value.staff}</p>
@@ -193,7 +193,7 @@ export default function About(props)
                             <Block>
                                 <SectionName>{section.type}</SectionName>
                                 <p>{section.value.director}</p>
-                                <p>{section.value.content_directors}</p>
+                                <p>{section.value.content_director}</p>
                                 <p>{section.value.art_director}</p>
                                 <p>{section.value.staff}</p>
                             </Block>
