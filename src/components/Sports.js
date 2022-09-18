@@ -2,17 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import { mediaQueries } from "../shared/config";
 
-import NewsTop from "../images/news_top.svg";
+import SportsHeader from "../images/sports.svg"
 import SportsTop from "../images/sports_top.svg";
-import NewsB from "../images/news_bottom.svg";
 import SportsB from "../images/sports_bottom.svg";
 
 import Card from "./Card";
 import { Fragment } from "react";
 
-export default function News_Sports(props) {
+export default function Sports(props) {
   const Container = styled.div`
-    background-color: ${props.sports ? "#6ADC44" : "#F8D84A"};
+    background-color: #6ADC44;
     max-width: 100vw;
     position: relative;
     overflow: hidden;
@@ -33,43 +32,6 @@ export default function News_Sports(props) {
     overflow: hidden; 
   `
 
-  const NewsTopBg = styled.img`
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 1;
-
-    display: inline-block;
-    width: 100%; 
-    vertical-align: middle; 
-    overflow: hidden; 
-    ${mediaQueries.mobile} {
-      width: 200%;
-    }
-  `
-
-  const NewsBottom = styled.img`
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    z-index: 1;
-
-    display: inline-block;
-    width: 100%; 
-    vertical-align: middle; 
-    overflow: hidden; 
-
-    ${mediaQueries.mobile} {
-      width: 200%;
-    }
-  `
 
   const LSports = styled.img`
     position: absolute;
@@ -107,11 +69,11 @@ export default function News_Sports(props) {
     z-index: 10;
     width: 95%;
     height: fit-content;
-    padding-top: ${props.sports ? '35em' : '30em'};
+    padding-top: 35em;
     padding-bottom: 5%;
     margin: auto;
     display: grid;
-    grid-template-rows: 0.5fr 0.5fr 1fr 0.5fr 0.5fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr;
     grid-template-columns: repeat(6, 1fr);
     row-gap: 2em;
     column-gap: 2em;
@@ -121,7 +83,7 @@ export default function News_Sports(props) {
       "four four five five six six"
       "seven seven seven eight eight eight"
       "nine nine nine eight eight eight"
-      "ten ten eleven eleven twelve twelve";
+      "ten ten ten eleven eleven eleven";
   
     ${mediaQueries.mobile} {
       display: flex;
@@ -175,10 +137,6 @@ export default function News_Sports(props) {
     .article_eleven{
       grid-area: eleven;
     }
-
-    .article_twelve{
-      grid-area: twelve;
-    }
   `;
   
   function buildGrid(data) {
@@ -205,50 +163,15 @@ export default function News_Sports(props) {
     });
   }
 
-  function buildTopBg(sports)
-  {
-      if (sports == false)
-      {
-        return (
-          <>
-            <NewsTopBg src={NewsTop}/>
-          </>
-        );
-      }
-      else
-      {
-        return (
-          <LSports src={SportsTop}/>
-        );
-      }
-  }
-
-  function buildBottomBg(sports)
-  {
-      if (sports == false)
-      {
-        return (
-          <>
-            <NewsBottom src={NewsB}/>
-          </>
-        );
-      }
-      else
-      {
-        return (
-          <SportsBottom src={SportsB}/>
-        );
-      }
-  }
 
   return (
     <Container>
-      <Header src={props.header}/>
-      {buildTopBg(props.sports)}
+      <Header src={SportsHeader}/>
+      <LSports src={SportsTop}/>
       <Grid>
         {buildGrid(props.articles)}
       </Grid>
-      {buildBottomBg(props.sports)}
+      <SportsBottom src={SportsB}/>
     </Container>
   );
 }

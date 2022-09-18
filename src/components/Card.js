@@ -6,8 +6,6 @@ import { mediaQueries } from '../shared/config';
 const Container = styled.div`
     position: relative;
     border: solid black 6px;
-    /* display: grid;
-    grid-template-rows: auto auto; */
     height: 100%;
     box-sizing: border-box;
     ${mediaQueries.mobile} {

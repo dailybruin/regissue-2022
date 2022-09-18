@@ -9,16 +9,14 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Landing from './components/Landing';
 import EditorLetter from "./components/EditorLetter";
-import News_Sports from "./components/News_Sports";
+import News from "./components/News";
+import Sports from "./components/Sports";
 import Arts from "./components/Arts";
 import Opinion from "./components/Opinion";
 import Quad from "./components/Quad";
 import Prime from "./components/Prime";
 import Multimedia from "./components/Multimedia";
 import About from "./components/About";
-
-import News from "./images/news.svg";
-import Sports from "./images/sports.svg"
 
 
 const AppContent = () => {
@@ -49,10 +47,10 @@ const AppContent = () => {
                 </div>
                 <EditorLetter letter = {data.letter}/>
                 <div id="news" >
-                  <News_Sports sports={false} header={News} articles={data.news} />
+                  <News articles={data.news} />
                 </div>
                 <div id="sports">
-                  <News_Sports id="sports" sports={true} header={Sports} articles={data.sports}/>
+                  <Sports articles={data.sports}/>
                 </div>
                 <div id="arts">
                   <Arts articles={data.arts}/>
